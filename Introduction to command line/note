@@ -1,0 +1,109 @@
+# Command Line, Linux/Bash, Git, SSH, and Azure CLI
+
+## What is the Command Line?
+   The command line is a text-based way of interacting with a computer system.
+   Instead of using a Graphical User Interface (GUI), users enter commands to perform tasks such as navigating directories, creating files, managing applications, and interacting with servers.
+
+## PowerShell
+   PowerShell is a task automation and configuration management framework developed by Microsoft. It includes a command-line shell and a scripting language.
+   PowerShell can be used to automate tasks and manage systems, including Microsoft Azure resources.
+
+   The Az PowerShell module allows users to manage Azure resources directly from PowerShell.
+
+## Bash
+   Bash, which stands for **Bourne Again Shell**, is a command-line shell and scripting language commonly used in Linux and Unix-based systems.
+   Bash allows users to interact with the operating system, execute commands, automate tasks, and run shell scripts.
+
+
+# Linux and Bash Commands
+
+## Navigation and Directory Commands
+ - `ls` — Lists files and directories.
+ - `ls -la` — Lists all files and directories, including hidden files, with detailed information and permissions.
+ - `pwd` — Displays the current working directory.
+ - `cd directory_name` — Changes to a specified directory.
+ - `cd ..` — Moves to the parent directory.
+ - `mkdir directory_name` — Creates a new directory.
+ - `rm -rf directory_name` — Removes a directory and its contents recursively.
+
+## File Commands
+ - `touch file_name` — Creates an empty file.
+ - `nano file_name` — Opens or creates a file using the Nano text editor.
+ - `echo` — Prints text or the value of a variable.
+ - `cp -r source destination` — Copies directories and their contents recursively.
+
+## Script and Permission Commands
+ - `chmod +x file_name` — Makes a file executable.
+ - `./script.sh` — Runs a shell script located in the current directory.
+ - `./` — Refers to the current directory and is commonly used before a file name when executing a file.
+
+## System and Server Commands
+ - `uname -a` — Displays detailed system information.
+ - `ssh user@ip_address` — Connects securely to a remote server using SSH.
+
+# Git Commands
+Git is a distributed version-control system used to track changes in files and manage project history.
+ - `git status` — Shows the status of the working directory and staging area.
+ - `git add .` — Adds all changes in the current directory to the staging area.
+ - `git commit -m "message"` — Creates a commit with a descriptive message.
+ - `git push` — Uploads committed changes from the local repository to the remote repository.
+ - `git pull` — Downloads and integrates changes from the remote repository into the local repository.
+ - `git pull --rebase origin main` — Downloads changes from the `main` branch and reapplies local commits on top of them.
+
+# SSH Commands
+SSH, or Secure Shell, is used to securely connect to remote systems and authenticate with services such as GitHub.
+ - `ssh-keygen -t ed25519 -C "email@example.com"` — Generates an ED25519 SSH key pair.
+ - `ssh -T git@github.com` — Tests SSH authentication with GitHub.
+ - `eval "$(ssh-agent -s)"` — Starts the SSH authentication agent in Git Bash.
+ - `ssh-add ~/.ssh/key_name` — Adds an SSH private key to the SSH agent.
+ - `ssh-add -l` — Lists the SSH keys currently loaded into the SSH agent.
+
+# Azure CLI
+Azure CLI is a command-line tool used to communicate with and manage the Microsoft Azure platform.
+
+## Basic Azure CLI Commands
+ - `az login` — Logs in to an Azure account.
+ - `az --version` — Displays the installed Azure CLI version.
+ - `az group create --name MyRG --location eastus` — Creates a resource group.
+ - `az group list -o table` — Lists Azure resource groups in a table format.
+ - `az group delete --name MyRG` — Deletes a resource group.
+
+# Creating and Managing a Virtual Machine
+
+## Create a Virtual Machine
+A basic Azure CLI command for creating a virtual machine is:
+
+`az vm create --resource-group MyRG --name MyVM --image Ubuntu2404`
+
+This command creates a virtual machine and specifies the resource group, VM name, operating system image.
+
+## List Virtual Machines
+
+`az vm list -o table`
+
+This displays the available virtual machines in a table format.
+
+## Start a Virtual Machine
+
+`az vm start --resource-group MyRG --name MyVM`
+
+This starts a specified virtual machine.
+
+## Stop a Virtual Machine
+
+`az vm stop --resource-group MyRG --name MyVM`
+
+This stops a specified virtual machine.
+
+## Key Takeaway
+
+Command-line tools provide a powerful way to manage systems and automate tasks. 
+Bash and PowerShell provide command-line environments for interacting with systems.
+Git helps track and manage changes to files, SSH provides secure remote access and authentication.
+and Azure CLI allows users to manage Azure resources directly from the command line.
+
+## Hands On
+ - Start vm machine through command line.
+ - Stop vm machine through command line.
+ - Display information about a resources.
+ - Display Resources and Resource Group.
